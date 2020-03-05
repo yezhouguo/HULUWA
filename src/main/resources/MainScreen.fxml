@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="mywidget" prefHeight="800.0" prefWidth="1200.0"  xmlns="http://javafx.com/javafx/8"  xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MyController">
+    <children>
+      <BorderPane prefHeight="650.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <Canvas fx:id="mycanvas" height="500.0" width="1000.0" BorderPane.alignment="CENTER" />
+         </center>
+         <top>
+             <Button fx:id="button"  layoutX="213.0" layoutY="2000.0" prefWidth="2000" prefHeight="60"  onKeyPressed="#onSpace" text="按空格键开始，按L键选择文件进行回放。（为了线程安全考虑，只有非战斗状态下才可以操作）；按键盘上方数字键1-8切换喽啰阵型（切换阵型前请先按S进行初始化）" />
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

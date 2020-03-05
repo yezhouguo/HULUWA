@@ -1,0 +1,66 @@
+@startuml
+
+
+package BattleField <<Folder>> 
+{
+    class Battle
+    class Field
+    class Formation
+    class Space
+}
+
+Space <|.. Field
+Field <|.. Battle
+Formation <|.. Battle
+Field <|.. Formation
+
+package Creatures <<Folder>> 
+{
+    class Creature
+    class Grandpa
+    class Monsters
+    class Snake
+    class huluwas
+    class Scorpion
+}
+
+Creature <|-- Grandpa
+Creature <|-- huluwas
+Creature <|-- Scorpion
+Creature <|-- Snake
+Creature <|-- Monsters
+
+package Controller <<Folder>> 
+{
+    class MyController
+}
+
+package Main <<Folder>> 
+{
+    class Main
+}
+
+package Save <<Folder>> 
+{
+    class initSave
+    class Saveaction
+}
+
+package Thread <<Folder>> 
+{
+    class CreThread
+    class GUIrefresh
+}
+
+CreThread <|.. initSave
+Battle <|.. Saveaction
+Battle <|-- CreThread
+Field <|.. MyController
+Formation <|.. MyController
+Creature <|.. MyController
+Creature <|.. CreThread
+GUIrefresh <|--> MyController
+CreThread <|--> MyController
+GUIrefresh <|-- Main
+
+@enduml
